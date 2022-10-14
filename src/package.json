@@ -1,0 +1,15 @@
+{
+  "name": "material-ui-list-with-react-beautiful-dnd",
+  "version": "1.0.0",
+  "description": "Reorderable material-ui List  using react-beautiful-dnd",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/k260nyxq9v",
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "3.9.2",
+    "@material-ui/icons": "3.0.2",
+    "react": "16.8.3",
+    "react-beautiful-dnd": "13.1.1",
+    "react-dom": "16.8.3"
+  }
+}
