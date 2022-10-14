@@ -12,6 +12,7 @@ import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import SortIcon from "@material-ui/icons/Sort";
 import EditIcon from "@material-ui/icons/Edit";
+import styled from 'styled-components';
 
 //exercise values 
 let exerciseArray = [
@@ -36,6 +37,19 @@ const getItemStyle = (isDragging, draggableStyle) => ({
     background: "rgb(235,235,235)"
   })
 });
+
+const Container = styled.div`
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+`
+
+const ListDiv = styled.div`
+  margin: 8px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  width: 80rem;
+`;
 
 const getListStyle = isDraggingOver => ({
   //background: isDraggingOver ? 'lightblue' : 'lightgrey',
@@ -71,6 +85,8 @@ class App extends Component {
   // But in this example everything is just done in one place for simplicity
   render() {
     return (
+      <Container>
+      <ListDiv>
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable">
           {(provided, snapshot) => (
@@ -96,8 +112,7 @@ class App extends Component {
                           primary={item.primary}
                           secondary={item.secondary}
                         />
-                        <ListItemSecondaryAction>
-                            <SortIcon />   
+                        <ListItemSecondaryAction> 
                         </ListItemSecondaryAction>
                       </ListItem>
                     )}
@@ -109,6 +124,8 @@ class App extends Component {
           )}
         </Droppable>
       </DragDropContext>
+      </ListDiv>
+      </Container>
     );
   }
 }
