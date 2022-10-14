@@ -10,22 +10,15 @@ import {
 } from "@material-ui/core";
 import RootRef from "@material-ui/core/RootRef";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import InboxIcon from "@material-ui/icons/Inbox";
+import SortIcon from "@material-ui/icons/Sort";
 import EditIcon from "@material-ui/icons/Edit";
 
-// fake data generator
-const getItems = count =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    primary: `item ${k}`,
-    secondary: k % 2 === 0 ? `Whatever for ${k}` : undefined
-  }));
-
-  let exerciseArray = [
-    {id: "item-0", primary: "Bench Press", secondary: "Compound Push"},
-    {id: "item-1", primary: "Squat", secondary: "Compound Legs"},
-    {id: "item-2", primary: "Dead Lift", secondary: "Compound Hinge"}
-  ];
+//exercise values 
+let exerciseArray = [
+  {id: "item-0", primary: "Bench Press", secondary: "Compound Push"},
+  {id: "item-1", primary: "Squat", secondary: "Compound Legs"},
+  {id: "item-2", primary: "Dead Lift", secondary: "Compound Hinge"}
+];
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -97,16 +90,14 @@ class App extends Component {
                         )}
                       >
                         <ListItemIcon>
-                          <InboxIcon />
+                          <SortIcon />
                         </ListItemIcon>
                         <ListItemText
                           primary={item.primary}
                           secondary={item.secondary}
                         />
                         <ListItemSecondaryAction>
-                          <IconButton>
-                            <EditIcon />
-                          </IconButton>
+                            <SortIcon />   
                         </ListItemSecondaryAction>
                       </ListItem>
                     )}
